@@ -19,7 +19,7 @@ public class Book {
 	
 	public Book() {} // constructor without parameters.
 
-	public Book(String title, String author, String isbn, Long year, Float price) {
+	public Book(String title, String author, String isbn, int year, Float price) {
 		this.title = title;
 		this.author = author;
 		this.isbn = isbn;
