@@ -13,13 +13,13 @@ public class Book {
 	private Long id;
 	private String title, author, isbn;
 	private int year;
-	private Float price;
+	private double price;
 	
 	
 	
 	public Book() {} // constructor without parameters.
 
-	public Book(String title, String author, String isbn, int year, Float price) {
+	public Book(String title, String author, String isbn, int year, double price) {
 		this.title = title;
 		this.author = author;
 		this.isbn = isbn;
@@ -67,7 +67,7 @@ public class Book {
 		this.year = year;
 	}
 
-	public Float getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
