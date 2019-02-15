@@ -1,11 +1,14 @@
 package com.plakolli.bookstore.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.plakolli.bookstore.domain.Book;
 import com.plakolli.bookstore.domain.BookRepository;
@@ -29,6 +32,11 @@ public class BookController {
 	public String getAllBooks(Model model) {
 		model.addAttribute("books", bookRepository.findAll());
 		return "booklist";
+	}
+	
+	@GetMapping("/books")
+	public @ResponseBody List<Book> bookListRes(){
+		return (List<Book>) bookRepository.findAll();
 	}
 	
 	@GetMapping("addBook")
