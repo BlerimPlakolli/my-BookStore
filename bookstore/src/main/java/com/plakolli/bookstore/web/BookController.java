@@ -1,6 +1,7 @@
 package com.plakolli.bookstore.web;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,9 +35,16 @@ public class BookController {
 		return "booklist";
 	}
 	
+	// get all books in JSON format(Restfull service to get all books in JSON)
 	@GetMapping("/books")
 	public @ResponseBody List<Book> bookListRes(){
 		return (List<Book>) bookRepository.findAll();
+	}
+	
+	// get book by id in JSON format- RESTfull service to get book by id
+	@GetMapping("/book/{id}")
+	public @ResponseBody Optional<Book> findBookRest(@PathVariable("id") Long studentId) {
+		return bookRepository.findById(studentId);
 	}
 	
 	@GetMapping("addBook")
