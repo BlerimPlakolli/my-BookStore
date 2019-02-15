@@ -18,7 +18,13 @@
     		<input type="text" id="isbn" th:field="*{isbn}"/>
     		<label for="year">Year</label>
     		<input type="text" id="year" th:field="*{year}"/>
+    		
+    		<label for="category">Category</label>
+    		<select id="category" th:field="*{category}">
+    			<option th:each="category : ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
+    		</select>
+    		
     		<input type="submit" class="btn btn-success" value="Save"/>
-    	</form> 
+    	</form>
 </body>
 </html>

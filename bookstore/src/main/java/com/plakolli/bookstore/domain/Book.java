@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Book {
@@ -15,16 +19,22 @@ public class Book {
 	private int year;
 	private double price;
 	
+	@ManyToOne
+	@JsonIgnore
+	@JoinColumn(name = "categoryid")
+	private Category category;
+	
 	
 	
 	public Book() {} // constructor without parameters.
 
-	public Book(String title, String author, String isbn, int year, double price) {
+	public Book(String title, String author, String isbn, int year, double price, Category category) {
 		this.title = title;
 		this.author = author;
 		this.isbn = isbn;
 		this.year = year;
 		this.price = price;
+		this.category = category;
 	}
 
 	public Long getId() {
@@ -71,9 +81,19 @@ public class Book {
 		return price;
 	}
 
-	public void setPrice(Float price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
+	
 	
 	// getters and setters
 	
