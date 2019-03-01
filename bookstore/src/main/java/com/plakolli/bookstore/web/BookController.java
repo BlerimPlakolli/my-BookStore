@@ -72,5 +72,11 @@ public class BookController {
 		model.addAttribute("categories", categoryRepository.findAll());
 		return "editbook";
 	}
+	
+	// Show all students
+    @GetMapping(value="/login")
+    public String login() {	
+        return "login";
+    }
 
 }
