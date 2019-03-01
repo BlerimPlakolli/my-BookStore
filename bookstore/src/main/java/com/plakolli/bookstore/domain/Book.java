@@ -24,8 +24,7 @@ public class Book {
 	@JoinColumn(name = "categoryid")
 	private Category category;
 	
-	
-	
+
 	public Book() {} // constructor without parameters.
 
 	public Book(String title, String author, String isbn, int year, double price, Category category) {
