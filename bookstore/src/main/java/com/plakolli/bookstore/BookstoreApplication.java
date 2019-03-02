@@ -4,12 +4,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.core.userdetails.User;
+//import org.springframework.security.core.userdetails.User;
 
 import com.plakolli.bookstore.domain.Book;
 import com.plakolli.bookstore.domain.BookRepository;
 import com.plakolli.bookstore.domain.Category;
 import com.plakolli.bookstore.domain.CategoryRepository;
+import com.plakolli.bookstore.domain.User;
+import com.plakolli.bookstore.domain.UserRepository;
 
 @SpringBootApplication
 public class BookstoreApplication {
@@ -18,7 +20,7 @@ public class BookstoreApplication {
 		SpringApplication.run(BookstoreApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner demoBooStoreData(BookRepository bookRepository, CategoryRepository categoryRepository) {
+	public CommandLineRunner demoBooStoreData(BookRepository bookRepository, CategoryRepository categoryRepository, UserRepository userRepository) {
 		return(args) -> {
 			
 			categoryRepository.save(new Category("Science"));
@@ -36,9 +38,11 @@ public class BookstoreApplication {
 			bookRepository.save(b3);
 			bookRepository.save(b4);
 			bookRepository.save(b5);
-				
 			
-			
+			User user1 = new User("user", "$2a$06$Whi1.R3yWO7iVmjpVLSyh.9wC5etxWV/Vegr0bZQ.wfX1qdDxCpYm", "USER");
+			User user2 = new User("admin", "$2a$10$Fi1gDeD2ziNuB6OqdtnCaeN76WL6gWA0BZtW47OFwAx9/KD3JDLjS", "ADMIN");
+			userRepository.save(user1);
+			userRepository.save(user2);
 		};
 	}
 

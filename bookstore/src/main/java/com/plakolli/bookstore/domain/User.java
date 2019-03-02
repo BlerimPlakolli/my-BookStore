@@ -32,12 +32,10 @@ public class User {
 		
 	}
 	
-	public User(Long id, String username, String passwordHash, String email, String role) {
+	public User(String username, String passwordHash, String role) {
 		super();
-		this.id = id;
 		this.username = username;
 		this.passwordHash = passwordHash;
-		this.email = email;
 		this.role = role;
 	}
 	
@@ -46,8 +44,6 @@ public class User {
 	public Long getId() {
 		return id;
 	}
-
-	
 
 	public void setId(Long id) {
 		this.id = id;
@@ -84,10 +80,4 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
-	
-	
-	
-
 }
