@@ -30,9 +30,9 @@ public class BookstoreApplication {
 			
 			Book b1 = new Book("Java How to Program (11th Edition)", "Paul J. Deitel", "978-0134743356", 2016, 5.50, categoryRepository.findByName("Programing").get(0));
 			Book b2 = new Book("Full Stack Development with spring boot and react", "Juha Hinkula", "078-1-78913-808-5", 2018, 5.50, categoryRepository.findByName("Programing").get(0));
-			Book b3 = new Book("Ernest Hemingway", "A farwell to Arms", "1232323-21", 1929, 5.50, categoryRepository.findByName("Programing").get(0));
-			Book b4 = new Book("George Orwell", "Animal Farm", "2212343-5", 1945, 5.50, categoryRepository.findByName("Programing").get(0));
-			Book b5= new Book("Blerim", "AI Impact", "2344556767", 2019, 5.50, categoryRepository.findByName("Programing").get(0));
+			Book b3 = new Book("A farwell to Arms", "Ernest Hemingway",  "1232323-21", 1929, 5.50, categoryRepository.findByName("Programing").get(0));
+			Book b4 = new Book("Animal Farm", "George Orwell",  "2212343-5", 1945, 5.50, categoryRepository.findByName("Programing").get(0));
+			Book b5= new Book("AI Impact", "Blerim",  "2344556767", 2019, 5.50, categoryRepository.findByName("Programing").get(0));
 			bookRepository.save(b1);
 			bookRepository.save(b2);
 			bookRepository.save(b3);
